@@ -11,8 +11,7 @@ class SerializerDataUji(serializers.ModelSerializer):
     
     class Meta:
         model = DataUji
-        fields = ['image', 'feature', 'kelas']
-        read_only_fields = ['id']
+        fields = ['id', 'image', 'feature', 'kelas']
         
     def create(self, validated_data):
         instance = super().create(validated_data)
