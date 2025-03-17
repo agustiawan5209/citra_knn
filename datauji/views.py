@@ -80,7 +80,7 @@ class PredictImageView(APIView):
             value = img_array_scaled[0][2]
             edges = img_array_scaled[0][3]
 
-            serializer.save(created_by=request.user, kelas=labels, feature=np.hstack([ hue,saturation,value, edges]))
+            serializer.save(created_by=request.user, kelas=labels, feature=img_array_scaled)
             return Response({'predict': serializer.data, 'feature': {
                 'hue': hue,
                 'saturation': saturation,

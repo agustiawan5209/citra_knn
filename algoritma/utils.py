@@ -98,4 +98,4 @@ def ekstraksi_ciri(image_path):
       edge_count = np.sum(edges > 0)  # Jumlah piksel tepi
 
       # Gabungkan semua fitur menjadi satu vektor
-      return [h_mean.round(2), s_mean.round(2), v_mean.round(2), h_std.round(2), s_std.round(2), v_std.round(2), edge_count]
+      return [h_mean.round(2), s_mean.round(2), v_mean.round(2), edge_count]
