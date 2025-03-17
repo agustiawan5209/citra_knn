@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+<div class="container mx-auto grid place-content-center">
+    <div class="flex flex-col w-full max-w-md p-12 space-y-4 text-center bg-white text-gray-800 shadow-md border rounded-lg">
+        {% if messages %}
+                <ul class="messages p-3 bg-blue-500 ">
+                  {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        <div class="flex items-center rounded shadow-md overflow-hidden max-w-xl relative bg-gray-50 text-gray-800">
+                            <div class="self-stretch flex items-center px-3 flex-shrink-0 bg-gray-300 text-lime-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="p-4 flex-1">
+                                <h3 class="text-xl font-bold">Pesan</h3>
+                                <p class="text-sm text-gray-600"> {{ message }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+    {% endif %}
+        <h1 class="text-3xl font-semibold">Masuk Ke akun Anda</h1>
+        <form novalidate="" method="post" class="space-y-4 flex flex-col justify-start text-start">
+            {% csrf_token %}
+          {% crispy form %}
+            
+            <button type="submit" class="px-8 py-3 space-x-2 font-semibold rounded bg-primary text-white text-gray-50">Sign in</button>
+        </form>
+        <div class="flex justify-center mt-4">
+            <a href="{% url 'password_reset' %}" class="text-blue-500 hover:text-blue-700">Lupa Kata Sandi?</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-yellow-400 to-yellow-200 py-20">
+    <div class="container mx-auto text-center">
+        <h1 class="text-5xl font-extrabold text-indigo-900 mb-6">Klasifikasikan Citra dengan Algoritma Terdepan</h1>
+        <p class="text-xl text-gray-800 mb-8">Menggunakan teknik canggih seperti HSV, GLCM, dan K-NN untuk klasifikasi citra yang akurat dan cepat.</p>
+        <a href="#" class="bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700">Mulai Sekarang</a>
+    </div>
+</section>
+
+<!-- Fitur Section -->
+<section id="fitur" class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10 text-indigo-900">Mengapa Menggunakan Klasifikasi Kami?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Fitur 1 -->
+            <div class="bg-gradient-to-t from-blue-100 to-blue-50 shadow-lg rounded-lg p-6">
+                <img src="https://via.placeholder.com/100" alt="HSV" class="mx-auto mb-4">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">Ruang Warna HSV</h3>
+                <p class="text-gray-700">Memanfaatkan kekuatan HSV untuk klasifikasi berdasarkan fitur warna yang lebih efisien.</p>
+            </div>
+            <!-- Fitur 2 -->
+            <div class="bg-gradient-to-t from-pink-100 to-pink-50 shadow-lg rounded-lg p-6">
+                <img src="https://via.placeholder.com/100" alt="GLCM" class="mx-auto mb-4">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">Analisis Tekstur GLCM</h3>
+                <p class="text-gray-700">Menganalisis tekstur menggunakan Gray Level Co-occurrence Matrix (GLCM) untuk klasifikasi tekstur yang akurat.</p>
+            </div>
+            <!-- Fitur 3 -->
+            <div class="bg-gradient-to-t from-purple-100 to-purple-50 shadow-lg rounded-lg p-6">
+                <img src="https://via.placeholder.com/100" alt="KNN" class="mx-auto mb-4">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">Algoritma K-NN</h3>
+                <p class="text-gray-700">Menggunakan algoritma K-NN untuk mengklasifikasikan citra berdasarkan tetangga terdekat, memastikan performa yang handal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Teknologi Section -->
+<section id="teknologi" class="bg-gradient-to-r from-indigo-100 to-blue-50 py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10 text-indigo-900">Teknologi Terdepan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Teknologi 1 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">HSV (Hue, Saturation, Value)</h3>
+                <p class="text-gray-700">Menganalisis fitur warna lebih efisien daripada menggunakan RGB konvensional.</p>
+            </div>
+            <!-- Teknologi 2 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">GLCM (Gray Level Co-occurrence Matrix)</h3>
+                <p class="text-gray-700">Ekstraksi fitur berbasis tekstur dengan presisi tinggi.</p>
+            </div>
+            <!-- Teknologi 3 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-2xl font-semibold text-indigo-800 mb-2">Algoritma K-NN</h3>
+                <p class="text-gray-700">Memanfaatkan pendekatan tetangga terdekat untuk klasifikasi yang lebih akurat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

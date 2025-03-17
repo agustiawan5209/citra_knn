@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <div class="md:container w-full flex justify-center items-center h-full pb-5">
+    <div class="flex flex-col w-full sm:w-[400px] md:w-[500px]  rounded-md px-2 py-2 sm:px-4 sm:py-2 bg-gray-50 text-gray-800 shadow-md border">
+      {% if messages %}
+                <ul class="messages p-3 bg-blue-500 ">
+                  {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        <div class="flex items-center rounded shadow-md overflow-hidden max-w-xl relative bg-gray-50 text-gray-800">
+                            <div class="self-stretch flex items-center px-3 flex-shrink-0 bg-gray-300 text-lime-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="p-4 flex-1">
+                                <h3 class="text-xl font-bold">Pesan</h3>
+                                <p class="text-sm text-gray-600"> {{ message }}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+    {% endif %}
+      <div class="mb-3 text-center">
+        <h1 class="my-3 text-4xl font-bold">Daftar</h1>
+        <p class="text-sm text-gray-600">Daftar untuk akses sistem</p>
+      </div>
+      <form action="" method="POST" class="space-y-4">
+        <div class="space-y-4 form-control">
+          {% csrf_token %}
+          {% crispy form %}
+          <div class="space-y-2 mt-5">
+            <div>
+              <button type="submit" class="w-full px-8 py-3 font-semibold rounded-md bg-primary text-white text-gray-50">Daftar</button>
+            </div>
+            <p class="px-6 text-sm text-center text-gray-600">
+              Sudah Punya Akun?
+              <a rel="noopener noreferrer" href="{% url 'login.app' %}" class="hover:underline text-emerald-600">Masuk</a>.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
